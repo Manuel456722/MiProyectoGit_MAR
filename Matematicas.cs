@@ -6,14 +6,10 @@ public class Matematicas
         return Fibonacci(n - 1) + Fibonacci(n - 2);
     }
 
+    /*Obtiene el máximo común divisor de dos números de forma recursiva, siendo a >b*/
     public static int MaximoComunDivisor(int a, int b)
     {
-        while (b != 0)
-        {
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
+        if (b == 0) return a;
+        return MaximoComunDivisor(b, a % b);
     }
 }
